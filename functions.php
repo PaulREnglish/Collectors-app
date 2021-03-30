@@ -9,7 +9,7 @@
 function getWeaponsData(object $db) : array
 {
     $query = $db->prepare("SELECT `name`,`damage_per_second`, 
-       `rate_of_fire`, `ammo_comsumption`, `ammo_efficiency`, 
+       `rate_of_fire`, `ammo_consumption`, `ammo_efficiency`, 
        `default_weapon_number`, `image_url` FROM `weapons`;");
     $query->execute();
 
@@ -100,8 +100,6 @@ function displayWeaponDatum($weapon) : string
 function displayWeaponData(array $weaponData) : string
 {
     $result = '';
-    echo 'hm';
-    echo validateWeaponData($weaponData);
     if(validateWeaponData($weaponData))
     {
         foreach($weaponData as $weapon)

@@ -4,7 +4,7 @@ require_once('functions.php');
 
 $weaponsData = getWeaponsData($db);
 
-
+var_dump($weaponsData);
 
 ?>
 
