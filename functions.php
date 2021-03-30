@@ -2,7 +2,6 @@
 require_once('dbConnection.php');
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_ASSOC);
 
-
 /**
  * Gets the weapon names and their stats from the weapons table in the paul_collection database
  *
@@ -19,7 +18,25 @@ function getWeaponsData(object $db) : array
     return $query->fetchAll();
 }
 
+/**
+ * Returns a bullet-pointed list of the names of each piece of data.
+ *
+ * @param array $data the data that will get returned.  This data must have a 'name' key.
+ * @return string returns the bullet-pointed list of data names.
+ */
+function displayListOfData(array $data) : string {
+    $result = '';
+    foreach($data as $datum) {
+            if(!array_key_exists($datum['name'])){
 
-echo '<pre>';
-var_dump(getWeaponsData($db));
-echo '</pre>';
+            }
+        $result .= '<li>' . $datum['name'] . '</li>';
+    }
+    return $result;
+}
+
+
+
+
+
+
