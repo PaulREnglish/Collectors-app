@@ -27,13 +27,26 @@ $weaponsData = getWeaponsData($db);
         </h1>
 
         <main>
-            <h2>
-                Collection Contents
-            </h2>
+            <section>
+                <h2>
+                    Collection Contents
+                </h2>
 
-            <list>
-                <?= displayWeaponNames($weaponsData)?>
-            </list>
+                <list>
+                    <?= displayWeaponNames($weaponsData)?>
+                </list>
+            </section>
+           <section>
+               <?= displayWeaponData($weaponsData); ?>
+
+
+
+           </section>
+
+
+
+
+
 
         </main>
     </body>
