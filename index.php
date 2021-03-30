@@ -1,4 +1,5 @@
 <?php
+require_once('dbConnection.php');
 require_once('functions.php');
 
 $weaponsData = getWeaponsData($db);
@@ -12,44 +13,30 @@ $weaponsData = getWeaponsData($db);
 <!DOCTYPE html>
 
 <html lang="en-GB">
+    <head>
+        <title>
+            My Collection of Old School FPS weapons
+        </title>
+    </head>
 
-<head>
-    <title>
-        My Collection of Old School FPS weapons
-    </title>
+    <body>
+        <h1>
+            <header>
+                Collection of Old School FPS weapons
+            </header>
+        </h1>
 
+        <main>
+            <h2>
+                Collection Contents
+            </h2>
 
-</head>
+            <list>
+                <?= displayWeaponNames($weaponsData)?>
+            </list>
 
-<body>
-
-    <h1>
-        Collection of Old School FPS weapons
-    </h1>
-
-
-    <h2>
-        Collection Contents
-    </h2>
-
-    <list>
-        <?php
-            foreach($weaponsData as $weapon) {
-                echo '<li>' . $weapon['name'] . '</li>';
-            }
-
-
-
-        ?>
-    </list>
-
-
-
-
-
-</body>
-
-
+        </main>
+    </body>
 </html>
 
 

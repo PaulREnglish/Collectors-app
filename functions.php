@@ -1,6 +1,4 @@
 <?php
-require_once('dbConnection.php');
-$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_ASSOC);
 
 /**
  * Gets the weapon names and their stats from the weapons table in the paul_collection database
@@ -19,23 +17,42 @@ function getWeaponsData(object $db) : array
 }
 
 /**
- * Returns a bullet-pointed list of the names of each piece of data.
+ * Returns true if the weapon has a name, returns false otherwise
+ *
+ * @param array $weapon the weapon to check if it has a name
+ * @return bool returns true if the weapon has a name
+ */
+function validateWeaponName(array $weapon) : bool {
+    return array_key_exists('name',$weapon);
+}
+
+/**
+ * Returns a bullet-pointed list of the names of each piece of weapon data.
  *
  * @param array $data the data that will get returned.  This data must have a 'name' key.
  * @return string returns the bullet-pointed list of data names.
  */
-function displayListOfData(array $data) : string {
+function displayWeaponNames(array $data) : string {
     $result = '';
-    foreach($data as $datum) {
-            if(!array_key_exists($datum['name'])){
-
+    foreach($data as $datum)
+    {
+            if(validateWeaponName($datum))
+            {
+                $result .= displayWeaponName($datum);
             }
-        $result .= '<li>' . $datum['name'] . '</li>';
     }
     return $result;
 }
 
-
+/**
+ * Returns the weapon name
+ *
+ * @param array $weapon the weapon whose name will get returned
+ * @return string the name of the weapon
+ */
+function displayWeaponName(array $weapon) : string {
+    return '<li>' . $weapon['name'] . '</li>';
+}
 
 
 
