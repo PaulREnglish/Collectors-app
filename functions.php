@@ -27,12 +27,70 @@ function validateWeaponName(array $weapon) : bool {
 }
 
 /**
+ * Checks to see if the input is an of arrays
+ *
+ * @param array $arrays the input to check
+ * @return bool returns true if the input is an array of arrays
+ */
+function checkArrayOfArrays(array $arrays) : bool
+{
+    foreach($arrays as $array)
+    {
+        if(!gettype($array) == 'array')
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+/**
+ * Validates the weapon data and returns true if the weapon data has the expected format
+ *
+ * @param array $weaponData the weapon data to validate
+ * @return bool returns true if the weapon data has the expected format
+ */
+function validateWeaponData(array $weaponData) : bool {
+
+    if(checkArrayOfArrays($weaponData))
+    {
+        foreach ($weaponData as $weaponDatum) {
+
+            if (!(gettype($weaponDatum['name']) == 'string' &&
+                gettype($weaponDatum['damage_per_second']) == 'string' &&
+                gettype($weaponDatum['rate_of_fire']) == 'string' &&
+                gettype($weaponDatum['ammo_consumption']) == 'integer' &&
+                gettype($weaponDatum['ammo_efficiency']) == 'string' &&
+                gettype($weaponDatum['default_weapon_number']) == 'integer' &&
+                gettype($weaponDatum['image_url']) == 'string')
+            )
+            {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+/**
+ * Returns the weapon name
+ *
+ * @param array $weapon the weapon whose name will get returned
+ * @return string the name of the weapon
+ */
+function displayWeaponName(array $weapon) : string
+{
+    return '<li>' . $weapon['name'] . '</li>';
+}
+
+/**
  * Returns a bullet-pointed list of the names of each piece of weapon data.
  *
  * @param array $data the data that will get returned.  This data must have a 'name' key.
  * @return string returns the bullet-pointed list of data names.
  */
-function displayWeaponNames(array $data) : string {
+function displayWeaponNames(array $data) : string
+{
     $result = '';
     foreach($data as $datum)
     {
@@ -44,15 +102,6 @@ function displayWeaponNames(array $data) : string {
     return $result;
 }
 
-/**
- * Returns the weapon name
- *
- * @param array $weapon the weapon whose name will get returned
- * @return string the name of the weapon
- */
-function displayWeaponName(array $weapon) : string {
-    return '<li>' . $weapon['name'] . '</li>';
-}
 
 
 
