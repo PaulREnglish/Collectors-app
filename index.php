@@ -17,21 +17,21 @@ $weaponsData = getWeaponsData($db);
     </head>
 
     <body>
-        <h1>
-            <header>
+         <header>
+            <h1>
                 Collection of Old School FPS weapons
-            </header>
-        </h1>
 
+            </h1>
+        </header>
         <main>
             <section>
                 <h2>
                     Collection Contents
                 </h2>
 
-                <list>
+                <ul>
                     <?= displayWeaponNames($weaponsData)?>
-                </list>
+                </ul>
             </section>
            <section>
                <?= displayWeaponData($weaponsData); ?>

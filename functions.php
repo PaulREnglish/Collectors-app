@@ -16,15 +16,15 @@ function getWeaponsData(object $db) : array
     return $query->fetchAll();
 }
 
-/**
- * Returns true if the weapon has a name, returns false otherwise
- *
- * @param array $weapon the weapon to check if it has a name
- * @return bool returns true if the weapon has a name
- */
-function validateWeaponName(array $weapon) : bool {
-    return array_key_exists('name',$weapon);
-}
+///**
+// * Returns true if the weapon has a name, returns false otherwise
+// *
+// * @param array $weapon the weapon to check if it has a name
+// * @return bool returns true if the weapon has a name
+// */
+//function validateWeaponName(array $weapon) : bool {
+//    return array_key_exists('name',$weapon);
+//}
 
 /**
  * Validates the weapon data and returns true if the weapon data has the expected format
@@ -73,7 +73,7 @@ function displayWeaponNames(array $data) : string
     $result = '';
     foreach($data as $datum)
     {
-            if(validateWeaponName($datum))
+            if(array_key_exists('name',$datum))
             {
                 $result .= displayWeaponName($datum);
             }
