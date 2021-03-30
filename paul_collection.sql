@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.33)
 # Database: paul_collection
-# Generation Time: 2021-03-30 08:35:26 +0000
+# Generation Time: 2021-03-30 14:23:19 +0000
 # ************************************************************
 
 
@@ -31,7 +31,7 @@ CREATE TABLE `weapons` (
   `name` varchar(255) NOT NULL DEFAULT '',
   `damage_per_second` enum('1','2','3','4','5','6','7','8','9','10') NOT NULL DEFAULT '1',
   `rate_of_fire` enum('1','2','3','4','5','6','7','8','9','10') NOT NULL DEFAULT '1',
-  `ammo_comsumption` mediumint(11) NOT NULL DEFAULT '0',
+  `ammo_consumption` mediumint(11) NOT NULL DEFAULT '0',
   `ammo_efficiency` enum('1','2','3','4','5','6','7','8','9','10','infinite') NOT NULL DEFAULT '1',
   `default_weapon_number` tinyint(11) NOT NULL DEFAULT '1',
   `image_url` varchar(3000) NOT NULL DEFAULT 'https://upload.wikimedia.org/wikipedia/en/3/3d/Hexenbox.jpg',
@@ -41,7 +41,7 @@ CREATE TABLE `weapons` (
 LOCK TABLES `weapons` WRITE;
 /*!40000 ALTER TABLE `weapons` DISABLE KEYS */;
 
-INSERT INTO `weapons` (`id`, `name`, `damage_per_second`, `rate_of_fire`, `ammo_comsumption`, `ammo_efficiency`, `default_weapon_number`, `image_url`)
+INSERT INTO `weapons` (`id`, `name`, `damage_per_second`, `rate_of_fire`, `ammo_consumption`, `ammo_efficiency`, `default_weapon_number`, `image_url`)
 VALUES
 	(1,'Wraithverge','10','6',36,'8',4,'https://www.hexenmagetower.com/charact_files/wraithverge5.JPG'),
 	(2,'Mace of Contrition','1','5',0,'infinite',1,'https://static.doomworld.com/monthly_2020_02/Screenshot_Hexen_20200221_080012.png.340d9d002265a0b15a01b1569f39237b.png'),
