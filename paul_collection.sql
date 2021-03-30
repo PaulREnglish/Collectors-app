@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.33)
 # Database: paul_collection
-# Generation Time: 2021-03-29 13:24:03 +0000
+# Generation Time: 2021-03-30 08:35:26 +0000
 # ************************************************************
 
 
@@ -28,13 +28,13 @@ DROP TABLE IF EXISTS `weapons`;
 
 CREATE TABLE `weapons` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) NOT NULL DEFAULT '',
-  `damage_per_second` enum('1','2','3','4','5','6','7','8','9','10') DEFAULT NULL,
-  `rate_of_fire` enum('1','2','3','4','5','6','7','8','9','10') DEFAULT NULL,
-  `ammo_comsumption` mediumint(11) DEFAULT NULL,
-  `ammo_efficiency` enum('1','2','3','4','5','6','7','8','9','10','infinite') DEFAULT NULL,
-  `default_weapon_number` tinyint(11) DEFAULT NULL,
-  `image_url` varchar(3000) DEFAULT NULL,
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `damage_per_second` enum('1','2','3','4','5','6','7','8','9','10') NOT NULL DEFAULT '1',
+  `rate_of_fire` enum('1','2','3','4','5','6','7','8','9','10') NOT NULL DEFAULT '1',
+  `ammo_comsumption` mediumint(11) NOT NULL DEFAULT '0',
+  `ammo_efficiency` enum('1','2','3','4','5','6','7','8','9','10','infinite') NOT NULL DEFAULT '1',
+  `default_weapon_number` tinyint(11) NOT NULL DEFAULT '1',
+  `image_url` varchar(3000) NOT NULL DEFAULT 'https://upload.wikimedia.org/wikipedia/en/3/3d/Hexenbox.jpg',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
