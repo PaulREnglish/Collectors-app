@@ -27,24 +27,6 @@ function validateWeaponName(array $weapon) : bool {
 }
 
 /**
- * Checks to see if the input is an of arrays
- *
- * @param array $arrays the input to check
- * @return bool returns true if the input is an array of arrays
- */
-function checkArrayOfArrays(array $arrays) : bool
-{
-    foreach($arrays as $array)
-    {
-        if(!gettype($array) == 'array')
-        {
-            return false;
-        }
-    }
-    return true;
-}
-
-/**
  * Validates the weapon data and returns true if the weapon data has the expected format
  *
  * @param array $weaponData the weapon data to validate
@@ -52,21 +34,18 @@ function checkArrayOfArrays(array $arrays) : bool
  */
 function validateWeaponData(array $weaponData) : bool {
 
-    if(checkArrayOfArrays($weaponData))
-    {
-        foreach ($weaponData as $weaponDatum) {
+    foreach ($weaponData as $weaponDatum) {
 
-            if (!(gettype($weaponDatum['name']) == 'string' &&
-                gettype($weaponDatum['damage_per_second']) == 'string' &&
-                gettype($weaponDatum['rate_of_fire']) == 'string' &&
-                gettype($weaponDatum['ammo_consumption']) == 'integer' &&
-                gettype($weaponDatum['ammo_efficiency']) == 'string' &&
-                gettype($weaponDatum['default_weapon_number']) == 'integer' &&
-                gettype($weaponDatum['image_url']) == 'string')
-            )
-            {
-                return false;
-            }
+        if (!(gettype($weaponDatum['name']) == 'string' &&
+            gettype($weaponDatum['damage_per_second']) == 'string' &&
+            gettype($weaponDatum['rate_of_fire']) == 'string' &&
+            gettype($weaponDatum['ammo_consumption']) == 'integer' &&
+            gettype($weaponDatum['ammo_efficiency']) == 'string' &&
+            gettype($weaponDatum['default_weapon_number']) == 'integer' &&
+            gettype($weaponDatum['image_url']) == 'string')
+        )
+        {
+            return false;
         }
     }
     return true;
@@ -101,6 +80,35 @@ function displayWeaponNames(array $data) : string
     }
     return $result;
 }
+
+function displayWeaponDatum($weapon) : string
+{
+    $result = '';
+    $result .= '<h3>' . $weapon['name'] .'</h3>';
+    $result .= '<ul>Damage per second: ' . $weapon['damage_per_second'] . '</ul>';
+    $result .= '<ul>Damage per second: ' . $weapon['damage_per_second'] . '</ul>';
+    $result .= '<ul>Damage per second: ' . $weapon['damage_per_second'] . '</ul>';
+    $result .= '<ul>Damage per second: ' . $weapon['damage_per_second'] . '</ul>';
+    $result .= '<ul>Damage per second: ' . $weapon['damage_per_second'] . '</ul>';
+    return $result;
+}
+
+
+
+
+function displayWeaponData(array $weaponData) : string
+{
+    $result = '';
+    if(validateWeaponData($weaponData))
+    {
+        foreach($weaponData as $weapon)
+        {
+            $result .= displayWeaponDatum($weapon);
+        }
+    }
+}
+
+
 
 
 

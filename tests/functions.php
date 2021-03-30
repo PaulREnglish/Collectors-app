@@ -20,22 +20,6 @@ class Functions extends TestCase
         validateWeaponName($input);
     }
 
-    public function testSuccessCheckArrayOfArrays()
-    {
-        $expected = true;
-        $input = [[1],[2,3]];
-        $case = checkArrayOfArrays($input);
-        $this->assertEquals($expected,$case);
-    }
-
-    public function testSuccess2CheckArrayOfArrays()
-    {
-        $expected = false;
-        $input = [1,[2,3]];
-        $case = checkArrayOfArrays($input);
-        $this->assertEquals($expected,$case);
-    }
-
     public function testSuccessValidateWeaponData()
     {
         $expected = true;
@@ -103,6 +87,13 @@ class Functions extends TestCase
         $input = [['damage' => 10]];
         $case = DisplayWeaponNames($input);
         $this->assertEquals($expected,$case);
+    }
+
+    public function testMalformedDisplayWeaponNames()
+    {
+        $input = 'Firestorm';
+        $this->expectException(TypeError::class);
+        displayWeaponNames($input);
     }
 }
 
