@@ -81,7 +81,13 @@ function displayWeaponNames(array $data) : string
     return $result;
 }
 
-function displayWeaponDatum($weapon) : string
+/**
+ * Outputs all of the weapon stats in a nice list
+ *
+ * @param $weapon //the weapons to list the stats of
+ * @return string  the stats of the weapon
+ */
+function displayWeaponDatum(array $weapon) : string
 {
     $result = '';
     $result .= '<h3>' . $weapon['name'] .'</h3>';
@@ -95,8 +101,12 @@ function displayWeaponDatum($weapon) : string
 }
 
 
-
-
+/**
+ * displays the alls the stats of all the weapons in the database
+ *
+ * @param array $weaponData  the database of the weapons and their stats
+ * @return string returns a string that contains all of the weapons and their stats
+ */
 function displayWeaponData(array $weaponData) : string
 {
     $result = '';

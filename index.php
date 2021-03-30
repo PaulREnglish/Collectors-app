@@ -3,9 +3,6 @@ require_once('dbConnection.php');
 require_once('functions.php');
 
 $weaponsData = getWeaponsData($db);
-
-var_dump($weaponsData);
-
 ?>
 
 
