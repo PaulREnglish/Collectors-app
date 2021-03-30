@@ -27,9 +27,9 @@ class Functions extends TestCase
             'name' => 'Firestorm',
             'damage_per_second' => '5',
             'rate_of_fire' => '5',
-            'ammo_comsumption' => 4,
+            'ammo_consumption' => '4',
             'ammo_efficiency' =>  '2',
-            'default_weapon_number' => 3,
+            'default_weapon_number' => '3',
             'image_url' => 'some kind of url'
             ]];
         $case = validateWeaponData($input);
@@ -42,7 +42,7 @@ class Functions extends TestCase
             'name' => 'Firestorm',
             'damage_per_second' => 5,
             'rate_of_fire' => '5',
-            'ammo_comsumption' => 4,
+            'ammo_consumption' => 4,
             'ammo_efficiency' =>  '2',
             'default_weapon_number' => 3,
             'image_url' => 'some kind of url'

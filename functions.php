@@ -39,7 +39,7 @@ function validateWeaponData(array $weaponData) : bool {
         if (!(gettype($weaponDatum['name']) == 'string' &&
             gettype($weaponDatum['damage_per_second']) == 'string' &&
             gettype($weaponDatum['rate_of_fire']) == 'string' &&
-            gettype($weaponDatum['ammo_comsumption']) == 'string' &&
+            gettype($weaponDatum['ammo_consumption']) == 'string' &&
             gettype($weaponDatum['ammo_efficiency']) == 'string' &&
             gettype($weaponDatum['default_weapon_number']) == 'string' &&
             gettype($weaponDatum['image_url']) == 'string')
@@ -87,7 +87,7 @@ function displayWeaponDatum($weapon) : string
     $result .= '<h3>' . $weapon['name'] .'</h3>';
     $result .= '<ul><li>Damage per second rating: ' . $weapon['damage_per_second'] . '</li>';
     $result .= '<li>Rate of fire rating: ' . $weapon['rate_of_fire'] . '</li>';
-    $result .= '<li>How much ammo each shot consumes: ' . $weapon['ammo_comsumption'] . '</li>';
+    $result .= '<li>How much ammo each shot consumes: ' . $weapon['ammo_consumption'] . '</li>';
     $result .= '<li>Ammo efficiency rating: ' . $weapon['ammo_efficiency'] . '</li>';
     $result .= '<li>Default weapon selection number: ' . $weapon['default_weapon_number'] . '</li></ul>';
     $result .= '<img src="' . $weapon['image_url'] . '"/>';
