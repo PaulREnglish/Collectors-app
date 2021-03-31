@@ -96,7 +96,7 @@ function displayWeaponDatum(array $weapon) : string
     $result .= '<li>How much ammo each shot consumes: ' . $weapon['ammo_consumption'] . '</li>';
     $result .= '<li>Ammo efficiency rating: ' . $weapon['ammo_efficiency'] . '</li>';
     $result .= '<li>Default weapon selection number: ' . $weapon['default_weapon_number'] . '</li></ul>';
-    $result .= '<img src="' . $weapon['image_url'] . '"/>';
+    $result .= '<div class="imageContainer"><img src="' . $weapon['image_url'] . '"/></div>';
     return $result;
 }
 
