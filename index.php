@@ -3,6 +3,8 @@ require_once('dbConnection.php');
 require_once('functions.php');
 
 $weaponsData = getWeaponsData($db);
+$weaponsNames = displayWeaponNames($weaponsData);
+$weaponsStats = displayWeaponData($weaponsData);
 ?>
 
 
@@ -24,35 +26,23 @@ $weaponsData = getWeaponsData($db);
              <header>
                 <h1>
                     Collection of Old School FPS weapons
-
                 </h1>
             </header>
+
             <main>
                 <div class="contents">
                     <h2>
                         Collection Contents
                     </h2>
-
                     <ul>
-                        <?= displayWeaponNames($weaponsData)?>
+                        <?=$weaponsNames;?>
                     </ul>
                 </div>
+
                <section>
-                   <?= displayWeaponData($weaponsData); ?>
-
-
-
+                   <?=$weaponsStats;?>
                </section>
-
-
-
-
-
-
             </main>
         </div>
     </body>
 </html>
-
-
-
