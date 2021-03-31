@@ -98,7 +98,7 @@ class Functions extends TestCase
 
     public function testSuccessDisplayWeaponDatum()
     {
-        $expected = '<h3>Firestorm</h3><ul><li>Damage per second rating: 5</li><li>Rate of fire rating: 5</li><li>How much ammo each shot consumes: 4</li><li>Ammo efficiency rating: 2</li><li>Default weapon selection number: 3</li></ul><img src="some kind of url"/>';
+        $expected = '<h3>Firestorm</h3><ul><li>Damage per second rating: 5</li><li>Rate of fire rating: 5</li><li>How much ammo each shot consumes: 4</li><li>Ammo efficiency rating: 2</li><li>Default weapon selection number: 3</li></ul><div class="imageContainer"><img src="some kind of url"/></div>';
         $input = [
             'name' => 'Firestorm',
             'damage_per_second' => '5',
@@ -121,7 +121,7 @@ class Functions extends TestCase
 
     public function testSuccessDisplayWeaponData()
     {
-        $expected = '<h3>Firestorm</h3><ul><li>Damage per second rating: 5</li><li>Rate of fire rating: 5</li><li>How much ammo each shot consumes: 4</li><li>Ammo efficiency rating: 2</li><li>Default weapon selection number: 3</li></ul><img src="some kind of url"/>';
+        $expected = '<h3>Firestorm</h3><ul><li>Damage per second rating: 5</li><li>Rate of fire rating: 5</li><li>How much ammo each shot consumes: 4</li><li>Ammo efficiency rating: 2</li><li>Default weapon selection number: 3</li></ul><div class="imageContainer"><img src="some kind of url"/></div>';
         $input = [[
             'name' => 'Firestorm',
             'damage_per_second' => '5',
