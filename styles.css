@@ -31,19 +31,17 @@ main > section {
     margin: 0 auto;
 }
 
-section h3 {
-    margin-top: 100px;
+.imageContainer {
+    width: 750px;
 }
 
-.imageContainer {
-    width: 500px;
+section h3 {
+    margin-top: 100px;
 }
 
 img {
     width: 100%;
 }
-
-
 
 @media only screen and (max-width: 1500px) {
     body > div {
@@ -55,12 +53,17 @@ img {
     * {
         font-size: 1rem;
     }
+
+    .contents {
+        width: 400px;
+    }
+
     main > section {
         width: 400px;
     }
 
     .imageContainer {
-        width: 400px;
+        width: 100%;
     }
 
 
@@ -71,20 +74,18 @@ img {
         font-size: 0.9rem;
     }
 
-    main > section {
+    .contents {
         width: 200px;
     }
 
-
-    .imageContainer {
-        width: 100px;
+    main > section {
+        width: 200px;
     }
 
     .contentsTitle h2 {
         margin-left: 0;
         display: inline;
     }
-
 }
 
 
