@@ -21,13 +21,18 @@ main {
     margin-top: 20px;
 }
 
-.contentsTitle {
-    display: flex;
+.contents {
+    width: 800px;
+    margin: 0 auto;
 }
 
-.contentsTitle h2 {
-    margin-left: 200px;
-    display: inline;
+main > section {
+    width: 800px;
+    margin: 0 auto;
+}
+
+section h3 {
+    margin-top: 100px;
 }
 
 .imageContainer {
@@ -41,25 +46,38 @@ img {
 
 
 @media only screen and (max-width: 1500px) {
-    * {
-        font-size: 1rem;
-    }
-
     body > div {
         width: 100%;
     }
 }
 
-
-
-
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1000px) {
     * {
-        font-size: 2rem;
+        font-size: 1rem;
+    }
+    main > section {
+        width: 400px;
     }
 
     .imageContainer {
-        width: 50px;
+        width: 400px;
+    }
+
+
+}
+
+@media only screen and (max-width: 500px) {
+    * {
+        font-size: 0.9rem;
+    }
+
+    main > section {
+        width: 200px;
+    }
+
+
+    .imageContainer {
+        width: 100px;
     }
 
     .contentsTitle h2 {

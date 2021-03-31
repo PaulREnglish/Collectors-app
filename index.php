@@ -28,15 +28,15 @@ $weaponsData = getWeaponsData($db);
                 </h1>
             </header>
             <main>
-                <div class="contentsTitle">
+                <div class="contents">
                     <h2>
                         Collection Contents
                     </h2>
-                </div>
+
                     <ul>
                         <?= displayWeaponNames($weaponsData)?>
                     </ul>
-
+                </div>
                <section>
                    <?= displayWeaponData($weaponsData); ?>
 
