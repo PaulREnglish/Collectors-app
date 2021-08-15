@@ -30,7 +30,7 @@ $weaponsStats = displayWeaponData($weaponsData);
             </header>
 
             <main>
-                <div class="contents">
+                <div class="contentsContainer">
                     <h2>
                         Collection Contents
                     </h2>
