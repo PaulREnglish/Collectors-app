@@ -22,21 +22,35 @@ function getWeaponsData(object $db) : array
  * @param array $weaponData the weapon data to validate
  * @return bool returns true if the weapon data has the expected format
  */
-function validateWeaponData(array $weaponData) : bool {
-
+function validateWeaponData(array $weaponData) : bool 
+{
     foreach ($weaponData as $weaponDatum) {
-
-        if (!(gettype($weaponDatum['name']) == 'string' &&
-            gettype($weaponDatum['damage_per_second']) == 'string' &&
-            gettype($weaponDatum['rate_of_fire']) == 'string' &&
-            gettype($weaponDatum['ammo_consumption']) == 'string' &&
-            gettype($weaponDatum['ammo_efficiency']) == 'string' &&
-            gettype($weaponDatum['default_weapon_number']) == 'string' &&
-            gettype($weaponDatum['image_url']) == 'string')
+        if (
+            !(
+                (
+                    array_key_exists('name', $weaponDatum) &&
+                    array_key_exists('damage_per_second', $weaponDatum) &&
+                    array_key_exists('rate_of_fire', $weaponDatum) &&
+                    array_key_exists('ammo_consumption', $weaponDatum) &&
+                    array_key_exists('ammo_efficiency', $weaponDatum) &&
+                    array_key_exists('default_weapon_number', $weaponDatum) &&
+                    array_key_exists('image_url', $weaponDatum)
+                )
+            &&
+                (
+                    gettype($weaponDatum['name']) == 'string' &&
+                    gettype($weaponDatum['damage_per_second']) == 'string' &&
+                    gettype($weaponDatum['rate_of_fire']) == 'string' &&
+                    gettype($weaponDatum['ammo_consumption']) == 'string' &&
+                    gettype($weaponDatum['ammo_efficiency']) == 'string' &&
+                    gettype($weaponDatum['default_weapon_number']) == 'string' &&
+                    gettype($weaponDatum['image_url']) == 'string'
+                )
+            )
         )
         {
             return false;
-        }
+        }          
     }
     return true;
 }

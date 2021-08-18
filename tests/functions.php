@@ -36,6 +36,21 @@ class Functions extends TestCase
         $this->assertEquals($expected,$case);
     }
 
+    public function testSuccess3ValidateWeaponData()
+    {
+        $expected = false;
+        $input = [[
+            'name' => 'Firestorm',
+            'damage_per_second' => '5',
+            'rate_of_fire' => '5',
+            'ammo_consumption' => '4',
+            'ammo_efficiency' =>  '2',
+            'default_weapon_number' => '3',
+            ]];
+        $case = validateWeaponData($input);
+        $this->assertEquals($expected,$case);
+    }
+
     public function testMalformedValidateWeaponData()
     {
         $input = 3;
