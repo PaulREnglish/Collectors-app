@@ -2,12 +2,13 @@
 require_once('dbConnection.php');
 require_once('functions.php');
 
+$db = connectToDatabase();
 $weaponsData = getWeaponsData($db);
 $weaponsNames = displayWeaponNames($weaponsData);
 $weaponsStats = displayWeaponData($weaponsData);
+$db = NULL;     //This apparently closes the PDO connection according to https://stackoverflow.com/questions/18277233/pdo-closing-connection
+                //Not sure if it actually works though.
 ?>
-
-
 
 <!DOCTYPE html>
 
